@@ -15,7 +15,7 @@
     <div class="error-msg"></div>
 
     <ion-item>
-      <ion-label Fixed>Etiological Agent</ion-label>
+      <ion-label floating>Etiological Agent</ion-label>
       <ion-input type="text" [(ngModel)]="Etiological" formControlName="Etiological"></ion-input>
     </ion-item>
     <div class="error-msg"></div>
@@ -78,7 +78,7 @@
           <ion-label floating>Source</ion-label>
           <ion-input #Sourceone type="text" [(ngModel)]="user.Sourceone" formControlName="Sourceone"></ion-input>
         </ion-item>
+
+        <button ion-button type="submit">Submit Disease</button>
   </form>
 </ion-content>
-
-       console.log("database saved") })

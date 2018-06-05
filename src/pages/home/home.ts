@@ -10,7 +10,7 @@ import { Validators, FormBuilder } from '@angular/forms';
 export class HomePage {
   public addSchoolForm;
 
-  user: { Etiological?: any, Phylum?: any, order?: any, subclass?: any, history?: any, Pathogenises?: any, Other?: any, Source?: any, Sourceone?:any } = {}
+  user: { Etiological?: any, Phylum?: any, order?: any, subclass?: any, history?: any, Pathogenises?: any, Other?: any, Source?: any, Sourceone?: any, Manifestations?: any} = {}
   constructor(public navCtrl: NavController, public formBuilder: FormBuilder, public viewCtrl: ViewController, public fireData: FirebaseProvider,) {
     this.initializeAddSchoolForm()
 
@@ -32,7 +32,10 @@ export class HomePage {
       Source: ['', Validators.compose([Validators.required,])],
       Pathogenises: ['', Validators.compose([Validators.required,])],
       Sourceone: ['', Validators.compose([Validators.required,])],
-    
+      Other: ['', Validators.compose([Validators.required,])],
+      Manifestations: ['', Validators.compose([Validators.required,])],
+      // Other: ['', Validators.compose([Validators.required,])],
+      
     });
   }
   submitAddSchoolForm() {
