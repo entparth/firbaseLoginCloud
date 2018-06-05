@@ -1,18 +1,84 @@
 <ion-header>
+
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Add Disease</ion-title>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <form [formGroup]="addSchoolForm" (submit)="submitAddSchoolForm()">
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="typeName" formControlName="typeName"></ion-input>
+    </ion-item>
+    <div class="error-msg"></div>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <ion-item>
+      <ion-label Fixed>Etiological Agent</ion-label>
+      <ion-input type="text" [(ngModel)]="Etiological" formControlName="Etiological"></ion-input>
+    </ion-item>
+    <div class="error-msg"></div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-item>
+      <ion-label floating>Phylum</ion-label>
+      <ion-input type="text" formControlName="Phylum" [(ngModel)]="user.Phylum"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>class</ion-label>
+      <ion-input #class type="text" [(ngModel)]="user.class" formControlName="class"></ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      Upload Logo
+      <image-upload [max]="1" [buttonCaption]="'Select Logo'" [dropBoxMessage]="''" [extensions]="['jpg','png']" (uploadFinished)="onImageSelect($event, 'logo')"
+        (removed)="onImgRemoved($event)"></image-upload>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label floating>Subclass </ion-label>
+
+  <ion-input #class type="text" [(ngModel)]="user.subclass" formControlName="subclass"></ion-input>
+</ion-item>
+
+    <ion-item>
+      <ion-label floating>order</ion-label>
+      <ion-input #order type="text" [(ngModel)]="user.order" formControlName="order"></ion-input>
+    </ion-item>
+
+      
+      <ion-item>
+        
+        <ion-label floating>Natural history of disease</ion-label>
+        <ion-input #history type="text" [(ngModel)]="user.history" formControlName="history"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Pathogenises</ion-label>
+        <ion-input #Pathogenises type="text" [(ngModel)]="user.Pathogenises" formControlName="Pathogenises"></ion-input>
+      </ion-item>
+
+        <ion-item>
+          <ion-label floating>Other</ion-label>
+          <ion-input #Other type="text" [(ngModel)]="user.Other" formControlName="Other"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Source</ion-label>
+          <ion-input #Source type="text" [(ngModel)]="user.Source" formControlName="Source"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Clinical Manifestations (signs and symptoms)</ion-label>
+          <ion-input #Manifestations type="text" [(ngModel)]="user.Manifestations" formControlName="Manifestations"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Source</ion-label>
+          <ion-input #Sourceone type="text" [(ngModel)]="user.Sourceone" formControlName="Sourceone"></ion-input>
+        </ion-item>
+  </form>
 </ion-content>
+
+       console.log("database saved") })
